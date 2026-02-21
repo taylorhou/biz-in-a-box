@@ -1,25 +1,53 @@
 # Label Registry
 # Labels drive validation behavior and categorize entries.
-# Add your own — these are defaults.
+# System labels have enforced rules. Domain labels are freeform.
 
-# --- System labels (have validation rules) ---
+# ─── SYSTEM LABELS (validation rules enforced) ──────────────────────────────
 
 financial:
   description: "Entry represents a financial transaction"
   requires: [debits, credits]
-  validates: double_entry  # debits total must equal credits total
+  validates: double_entry       # debits total must equal credits total
 
 correction:
   description: "Corrects or reverses a prior entry"
-  requires: [supersedes]  # must reference the entry being corrected
+  requires: [supersedes]        # must reference the entry being corrected
 
-# --- Domain labels (freeform, no extra validation) ---
+transfer:
+  description: "Marks an ownership handoff"
+  requires: [from, to]          # actor IDs of previous and new owner
+  note: >
+    To transfer an entity's journal: copy the journal file, add a transfer entry,
+    then the new owner continues appending. The hash chain verifies all history
+    before the transfer point independently.
 
-sales:         "Revenue-related event (deal closed, invoice sent, payment received)"
+# ─── TIMING LABELS (distinguish live vs historical records) ─────────────────
+
+historical:
+  description: >
+    Entry records a past event added in arrears.
+    event_time will significantly precede recorded_at.
+    Use when manually entering past events that weren't captured at the time.
+
+imported:
+  description: >
+    Entry was bulk-converted from another system (QuickBooks, spreadsheet,
+    bank statement, etc.). Typically AI-assisted. May be financial or operational.
+
+opening-balance:
+  description: >
+    Establishes starting account balances when an existing entity adopts this standard.
+    Acts as the financial 'day zero' of this journal.
+    Should be one of the first entries, labeled [financial, opening-balance].
+
+# ─── DOMAIN LABELS (freeform — no extra validation) ─────────────────────────
+# Add your own. These are common starting points.
+
+sales:         "Revenue-related event"
 marketing:     "Marketing activity or spend"
 hiring:        "Recruiting, offers, onboarding, terminations"
 legal:         "Contracts, compliance, disputes"
-ops:           "General operations, infrastructure, tools"
+ops:           "General operations"
 support:       "Customer support interactions"
 product:       "Product decisions, launches, releases"
 investor:      "Fundraising, board, investor relations"
@@ -27,5 +55,7 @@ founder:       "Founder decisions, equity, strategy"
 tax:           "Tax-related events, filings, payments"
 payroll:       "Payroll runs, contractor payments"
 banking:       "Bank transfers, account activity"
+period-close:  "Marks end of a fiscal period (month, quarter, year)"
 
-# Add your own labels freely — unknown labels pass through without error
+# Vertical-specific labels live in their fork's labels.yaml, not here.
+# Unknown labels always pass through without error.

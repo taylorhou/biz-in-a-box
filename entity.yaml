@@ -1,0 +1,23 @@
+# Entity
+# Who or what this journal belongs to.
+# Required: id, name, type — everything else is optional.
+# This file is intentionally minimal so it works for any entity on earth:
+# a rental unit, a Nigerian LLC, a sole trader in Tokyo, a Wyoming DAO, a trust, a farm.
+
+id: ""          # ULID recommended (time-sortable, globally unique). Any unique string works.
+name: ""        # Human-readable name. Whatever makes sense for this entity.
+type: ""        # Free-form. Examples: LLC, GmbH, rental-unit, sole-trader, trust, farm, DAO, individual...
+
+# Everything below is optional. Add whatever your jurisdiction or vertical requires.
+# Verticals (pm-in-a-box, dentist-in-a-box, etc.) will define their own extended fields here.
+meta: {}
+# Examples of what goes in meta:
+#   ein: "XX-XXXXXXX"           # US employer ID
+#   vat: "DE123456789"          # EU VAT
+#   abn: "XX XXX XXX XXX"       # Australia
+#   registration: "12345678"    # UK Companies House
+#   jurisdiction: TX            # state/province/country
+#   address: "123 Main St"
+#   established: "2024-01-15"
+#   unit: "101"                 # for rental-unit type
+#   property: "123 Main St"     # parent property reference

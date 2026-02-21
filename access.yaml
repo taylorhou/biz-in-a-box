@@ -1,0 +1,29 @@
+# Access Control
+# Defines who can read and write this journal.
+# Actors can be humans, AI agents, or external services.
+# Permissions are advisory — enforced by agents, not cryptography (in v1).
+
+actors: []
+# Example:
+# actors:
+#   - id: taylor@example.com
+#     label: Owner
+#     can: [read, write, sign, admin]
+#
+#   - id: agent:sage
+#     label: AI Agent (Sage)
+#     can: [read, write-ops, write-financial]
+#
+#   - id: harper@pmfirm.com
+#     label: Property Manager
+#     can: [read, write-ops]
+#     granted_by: taylor@example.com
+#     granted_at: "2026-02-21T00:00:00Z"
+#     expires: null    # or ISO date
+
+# Permission levels:
+#   read              — can view journal entries
+#   write-ops         — can add non-financial entries
+#   write-financial   — can add financial entries (requires double-entry)
+#   sign              — can countersign entries
+#   admin             — can modify access.yaml itself
