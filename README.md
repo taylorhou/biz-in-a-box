@@ -1,14 +1,16 @@
 ```
-                      ___
-                    _/B B\_
-                   ( _===_ ) ~~~
-                    \_____/
-                      | |
+                   \  /      \  /
+                .--\//-.  .-\\/--.
+               ( o    o )( o    o )
+              /|   /\   ||   /\   |\
+             /_|  /  \  ||  /  \  |_\
+                \_\__/\_//_\__/\_/
+
         ─────────────────────────────────────
                b i z - i n - a - b o x
         ─────────────────────────────────────
              one ledger. any entity. any agent.
-                  biz-in-a-box.org
+                  🐝  biz-in-a-box.org  🐝
 ```
 
 > The future looks like this:
@@ -28,6 +30,10 @@
 ## What is this?
 
 A stupidly simple, agent-native operating system for any business entity on earth.
+
+**Quick links:**
+- Website: https://biz-in-a-box.org
+- GitHub: https://github.com/taylorhou/biz-in-a-box
 
 An append-only event log. A chart of accounts. A handful of rules. Nothing else.
 
