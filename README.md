@@ -32,6 +32,9 @@ An append-only event log. A chart of accounts. A handful of rules. Nothing else.
 
 AI agents can read the entire history of an entity in one context window and derive anything from it — P&L, cash flow, burn rate, audit trails, occupancy, churn, anything. No BI stack. No dashboards to maintain. No vendor lock-in.
 
+> Current scope: **ledger protocol foundation**.  
+> See [`ROADMAP.md`](./ROADMAP.md) for hardening milestones before “full accounting system” claims.
+
 **One repo = one entity.**  
 A rental unit. A dental practice. An HVAC company. A Nigerian LLC. A Wyoming DAO.  
 Fork it. Make it yours.
@@ -102,8 +105,8 @@ If `time` and `recorded_at` differ by more than 7 days without a `historical` or
   "debits":  [{ "account": "1000-cash",    "amount": 5000.00 }],
   "credits": [{ "account": "4000-revenue", "amount": 5000.00 }],
   "created_by": "agent:sage",
-  "prev_hash": "0000000000000000",
-  "hash": "..."
+  "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hash": "8c4b...<64-char sha256>...f91a"
 }
 ```
 

@@ -21,10 +21,25 @@
 import { createHash } from "crypto";
 import { readFileSync } from "fs";
 
+const GENESIS_HASH = "0".repeat(64);
+
+function canonicalize(value) {
+  if (Array.isArray(value)) return value.map(canonicalize);
+  if (value && typeof value === "object") {
+    return Object.keys(value)
+      .sort()
+      .reduce((acc, key) => {
+        acc[key] = canonicalize(value[key]);
+        return acc;
+      }, {});
+  }
+  return value;
+}
+
 export function hashEntry(entry) {
   const { hash: _h, ...rest } = entry;
-  const canonical = JSON.stringify(rest, Object.keys(rest).sort());
-  return createHash("sha256").update(canonical).digest("hex").slice(0, 16);
+  const canonical = JSON.stringify(canonicalize(rest));
+  return createHash("sha256").update(canonical).digest("hex");
 }
 
 export function validateEntry(entry, prevHash, index) {
@@ -80,6 +95,10 @@ export function validateEntry(entry, prevHash, index) {
     errors.push(`${loc}: prev_hash mismatch (expected ${prevHash}, got ${entry.prev_hash})`);
   }
 
+  if (entry.hash && !/^[a-f0-9]{64}$/i.test(entry.hash)) {
+    errors.push(`${loc}: hash must be 64-char hex sha256`);
+  }
+
   const expectedHash = hashEntry({ ...entry, prev_hash: prevHash });
   if (entry.hash && entry.hash !== expectedHash) {
     errors.push(`${loc}: hash invalid (expected ${expectedHash}, got ${entry.hash})`);
@@ -95,7 +114,7 @@ if (process.argv[1] === new URL(import.meta.url).pathname) {
   const lines = readFileSync(file, "utf8").trim().split("\n").filter(Boolean);
 
   let allErrors = [];
-  let prevHash = "0000000000000000";
+  let prevHash = GENESIS_HASH;
   let i = 0;
 
   for (const line of lines) {
