@@ -8,6 +8,7 @@
                b i z - i n - a - b o x
         ─────────────────────────────────────
              one ledger. any entity. any agent.
+                  biz-in-a-box.org
 ```
 
 > The future looks like this:
