@@ -34,6 +34,9 @@ AI agents can read the entire history of an entity in one context window and der
 
 > **Intent:** replace legacy ERP and accounting software with an open, agent-native source of truth.  
 > See [`ROADMAP.md`](./ROADMAP.md) for the execution path from protocol to full replacement.
+>
+> Inspired by Andrej Karpathy’s note on **nano repos** and **maximally forkable bases**:  
+> <https://x.com/karpathy/status/2024987174077432126?s=61>
 
 **One repo = one entity.**  
 A rental unit. A dental practice. An HVAC company. A Nigerian LLC. A Wyoming DAO.  
