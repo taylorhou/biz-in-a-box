@@ -5,8 +5,8 @@ adoption/security, and accounting controls.
 
 ## Positioning (Now)
 
-- **Current position:** open ledger protocol / agent-native accounting substrate
-- **Not yet:** full accounting-system replacement (QuickBooks/Xero/AppFolio parity)
+- **Mission:** replace legacy ERP and accounting software with an open, agent-native system of record.
+- **Execution strategy:** ship protocol hardening first, then controls and vertical depth to complete replacement.
 
 ## v0.3 — Protocol Hardening (Now)
 
@@ -45,7 +45,7 @@ Keep base small. Push industry complexity to forks:
 - `hvac-in-a-box`
 - etc.
 
-## Go/No-Go Gate
+## Launch Gate
 
-- **Go now** for OSS protocol launch and community forks
-- **No-go** on claiming full accounting replacement until v0.6 controls land
+- **Go now** for OSS launch with explicit replacement intent.
+- Ship in phases (`v0.3` → `v0.6`) to earn production trust while maintaining aggressive replacement trajectory.

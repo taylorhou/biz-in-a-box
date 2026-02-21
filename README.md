@@ -32,8 +32,8 @@ An append-only event log. A chart of accounts. A handful of rules. Nothing else.
 
 AI agents can read the entire history of an entity in one context window and derive anything from it — P&L, cash flow, burn rate, audit trails, occupancy, churn, anything. No BI stack. No dashboards to maintain. No vendor lock-in.
 
-> Current scope: **ledger protocol foundation**.  
-> See [`ROADMAP.md`](./ROADMAP.md) for hardening milestones before “full accounting system” claims.
+> **Intent:** replace legacy ERP and accounting software with an open, agent-native source of truth.  
+> See [`ROADMAP.md`](./ROADMAP.md) for the execution path from protocol to full replacement.
 
 **One repo = one entity.**  
 A rental unit. A dental practice. An HVAC company. A Nigerian LLC. A Wyoming DAO.  
