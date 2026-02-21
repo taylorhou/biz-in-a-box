@@ -34,6 +34,11 @@ A stupidly simple, agent-native operating system for any business entity on eart
 **Quick links:**
 - Website: https://biz-in-a-box.org
 - GitHub: https://github.com/taylorhou/biz-in-a-box
+- Spec: [`SPEC.md`](./SPEC.md)
+- Roadmap: [`ROADMAP.md`](./ROADMAP.md)
+- Security: [`SECURITY.md`](./SECURITY.md)
+- Contributing: [`CONTRIBUTING.md`](./CONTRIBUTING.md)
+- Scope guardrails: [`WHAT_THIS_IS_NOT.md`](./WHAT_THIS_IS_NOT.md)
 
 An append-only event log. A chart of accounts. A handful of rules. Nothing else.
 
@@ -197,6 +202,17 @@ Your pre-conversion history doesn't have to live in this journal — the `openin
 
 ---
 
+## Quickstart (2 minutes)
+
+```bash
+git clone https://github.com/taylorhou/biz-in-a-box
+cd biz-in-a-box
+npm run validate
+node validate.js examples/sample.journal.ndjson
+```
+
+Then copy `examples/sample.journal.ndjson` into your own `journal.ndjson` and start appending entries.
+
 ## Files
 
 ```
@@ -206,6 +222,7 @@ accounts.yaml      # chart of accounts
 labels.yaml        # label registry + validation rules
 access.yaml        # who can read and write
 validate.js        # ~130 line validator (exportable for vertical forks)
+examples/          # sample valid journals
 snapshots/         # periodic signed integrity snapshots
 FORK.md            # how to create a vertical fork
 verticals/         # index of known community forks
