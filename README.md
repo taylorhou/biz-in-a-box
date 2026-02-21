@@ -33,7 +33,7 @@ An append-only event log. A chart of accounts. A handful of rules. Nothing else.
 AI agents can read the entire history of an entity in one context window and derive anything from it — P&L, cash flow, burn rate, audit trails, occupancy, churn, anything. No BI stack. No dashboards to maintain. No vendor lock-in.
 
 > **Intent:** replace legacy ERP and accounting software with an open, agent-native source of truth.  
-> See [`ROADMAP.md`](./ROADMAP.md) for the execution path from protocol to full replacement.
+> See [`ROADMAP.md`](./ROADMAP.md) for the execution path and [`SPEC.md`](./SPEC.md) for protocol details.
 >
 > Inspired by Andrej Karpathy’s note on **nano repos** and **maximally forkable bases**:  
 > <https://x.com/karpathy/status/2024987174077432126?s=61>
