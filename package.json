@@ -1,0 +1,10 @@
+{
+  "name": "nano-biz",
+  "version": "0.1.0",
+  "description": "Append-only business journal — agent-native, human-auditable",
+  "type": "module",
+  "scripts": {
+    "validate": "node validate.js journal.ndjson"
+  },
+  "license": "MIT"
+}

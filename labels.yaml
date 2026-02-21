@@ -1,0 +1,31 @@
+# Label Registry
+# Labels drive validation behavior and categorize entries.
+# Add your own — these are defaults.
+
+# --- System labels (have validation rules) ---
+
+financial:
+  description: "Entry represents a financial transaction"
+  requires: [debits, credits]
+  validates: double_entry  # debits total must equal credits total
+
+correction:
+  description: "Corrects or reverses a prior entry"
+  requires: [supersedes]  # must reference the entry being corrected
+
+# --- Domain labels (freeform, no extra validation) ---
+
+sales:         "Revenue-related event (deal closed, invoice sent, payment received)"
+marketing:     "Marketing activity or spend"
+hiring:        "Recruiting, offers, onboarding, terminations"
+legal:         "Contracts, compliance, disputes"
+ops:           "General operations, infrastructure, tools"
+support:       "Customer support interactions"
+product:       "Product decisions, launches, releases"
+investor:      "Fundraising, board, investor relations"
+founder:       "Founder decisions, equity, strategy"
+tax:           "Tax-related events, filings, payments"
+payroll:       "Payroll runs, contractor payments"
+banking:       "Bank transfers, account activity"
+
+# Add your own labels freely — unknown labels pass through without error
